@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Relative Pitch Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div id="start-screen">
+      <div class="start-content">
+        <h1>The Relative Pitch Game! 🎹🎶</h1>
+        <h2>Diatonic notes of The Major Scale (Ionian Mode)</h2>
+        <p>Three Octaves (C3–C6)</p>
+        <p>Can you correctly identify which note is played?<br>Use the reference pitch to help!</p>
+        <button id="start-button" class="green-button">Start Game</button>
+      </div>
+    </div>
+
+    <div id="game-screen" class="hidden">
+      <h1>The Relative Pitch Game! 🎹🎶</h1>
+      <h2 id="mode-heading">Diatonic - C Major Scale</h2>
+      <p id="octave-info">Three Octaves (C3–C6)</p>
+
+      <div class="controls">
+        <button id="play-reference" class="green-button">Play Reference (C - Tonic)</button>
+        <button id="replay-note" class="green-button">Replay Note</button>
+        <button id="next-button" class="green-button" disabled>Next</button>
+      </div>
+
+      <p id="prompt">Which note was played?</p>
+
+      <div id="note-buttons-container">
+        <button class="blue-button" data-note="C">C</button>
+        <button class="blue-button" data-note="D">D</button>
+        <button class="blue-button" data-note="E">E</button>
+        <button class="blue-button" data-note="F">F</button>
+        <button class="blue-button" data-note="G">G</button>
+        <button class="blue-button" data-note="A">A</button>
+        <button class="blue-button" data-note="B">B</button>
+      </div>
+
+      <div class="options">
+        <p>Display answers as:</p>
+        <button id="notes-mode" class="green-button">Notes</button>
+        <button id="scale-degrees-mode" class="green-button">Scale Degrees</button>
+      </div>
+
+      <p>Scale options:</p>
+      <select id="scale-selector">
+        <option value="c-d-e">C, D, E only</option>
+        <option value="c-d-e-f-g">C, D, E, F, G only</option>
+        <option value="c-d-e-f-g-a-b">C, D, E, F, G, A, B</option>
+      </select>
+
+      <button id="reset-score" class="green-button">Reset Score</button>
+
+      <div class="scoreboard">
+        <p>Score:</p>
+        <p>Correct: <span id="correct-count">0</span></p>
+        <p>Incorrect: <span id="incorrect-count">0</span></p>
+        <p>Total: <span id="total-count">0</span></p>
+        <p>Accuracy: <span id="accuracy">0.0%</span></p>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
